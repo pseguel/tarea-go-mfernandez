@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	//"sort"
+	"sort"
 	//"strings"
 	"math/rand"
 )
@@ -43,7 +43,7 @@ func NewPerson(first, last string) *Person {
 }
 
 func main() {
-	var people []*Person
+	var people PersonSlice
 	p1 := NewPerson("Juan", "Perez")
 	p2 := NewPerson("Juan", "Soto")
 	p3 := NewPerson("Carlos", "Perez")
@@ -56,6 +56,11 @@ func main() {
 	people = append(people, p3)
 	//people_slice := people[:]
 	fmt.Println(people)
+	
+	sort.Sort(people)
+	fmt.Println(people)
+
+
 
 	/*
 	for k, v := range hello {
